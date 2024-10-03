@@ -1,0 +1,22 @@
+/* Reset styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(160, 249, 249);
+    height: 100vh;
+    width: 1363px;
+    margin: 0;
+    overflow: hidden;
+}
