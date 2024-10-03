@@ -47,3 +47,13 @@ table {
   tbody tr:hover {
     background-color: #e2e2e2;
   }
+
+  .admin-button{
+    width: 100px;
+    background-color: #65d7e6;
+    color: #066f7d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px;
+  }

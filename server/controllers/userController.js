@@ -45,7 +45,7 @@ const login = async (req, res) => {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
         secure: true,
-        sameSite: "None",
+        sameSite:'None',
       })
       .json({
         message: `Welcome ${user.username}`,
@@ -88,7 +88,7 @@ const signup = async (req, res) => {
 
 const logout=(req,res)=>{
     try {
-        res.clearCookie('token', { httpOnly: true, secure: true, sameSite: 'None' }); 
+        res.clearCookie('token', { httpOnly: true, secure: true, sameSite:'None'}); 
         return res.status(200).json({message:"Logged out successfully",success:true})
     } catch (error) {
         console.log(error);
