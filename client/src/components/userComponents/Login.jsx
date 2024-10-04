@@ -23,7 +23,7 @@ function Login() {
         if (response.data.success) {
           const user = response.data.user;
           setErrorMessage("")
-          navigate('/home',{state:{user}})
+          navigate('/home',{state:{user},replace:true})
         }
       })
       .catch((error)=>{

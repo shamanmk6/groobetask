@@ -16,7 +16,7 @@ const adminLogin = async (req, res) => {
     if (!admin) {
       return res
         .status(400)
-        .json({ message: "Admin not exist", success: false });
+        .json({ message: "User not exist", success: false });
     }
     if(!admin.isAdmin){
         return res.status(400).json({message:"Not admin",success:false})

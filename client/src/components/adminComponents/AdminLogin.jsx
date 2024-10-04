@@ -21,9 +21,9 @@ function AdminLogin() {
       )
       .then((response) => {
         if (response.data.success) {
-          const user = response.data.user;
+          const admin = response.data.admin;
           setErrorMessage("")
-          navigate('/admin-home',{state:{user}})
+          navigate('/admin-home',{state:{admin},replace:true})
         }
       })
       .catch((error)=>{

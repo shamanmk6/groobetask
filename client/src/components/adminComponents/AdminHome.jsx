@@ -6,7 +6,7 @@ import axios from "axios";
 
 function AdminHome() {
   const location = useLocation();
-  let user = location.state;
+  let admin = location.state;
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
@@ -31,7 +31,7 @@ function AdminHome() {
   };
   return (
     <div className="home">
-      <AdminNavbar user={user} />
+      <AdminNavbar admin={admin} />
       <div className="user-details">
         <table>
           <thead>

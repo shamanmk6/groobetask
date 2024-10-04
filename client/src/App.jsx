@@ -6,6 +6,7 @@ import Home from "./components/userComponents/Home";
 import ProtectedRoute from "./components/userComponents/ProtectedRoute";
 import AdminLogin from "./components/adminComponents/AdminLogin";
 import AdminHome from "./components/adminComponents/AdminHome";
+import Error from "./components/Error";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/admin-home" element={<ProtectedRoute><AdminHome/></ProtectedRoute>}></Route>
           <Route path="/signup" element={<Signup/>}></Route>
           <Route path="/home" element={<ProtectedRoute><Home/></ProtectedRoute>}></Route>
+          <Route path="*" element={<Error/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
