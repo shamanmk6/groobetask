@@ -1,0 +1,26 @@
+
+.error-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(96, 245, 245);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+button{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 40px;
+    margin-left: 90px;
+    font-size: x-large;
+    font-weight: bolder;
+    color: rgb(96, 245, 245);
+    background-color: rgb(1, 71, 71);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+button:hover {
+    opacity: 0.7;
+}

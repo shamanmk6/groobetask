@@ -8,7 +8,7 @@ import { User } from "../models/userModel.js";
 
 const login = async (req, res) => {
   try {
-    const { email, password} = req.body;
+    const { email, password } = req.body;
     if (!email || !password) {
       return res
         .status(400)
@@ -45,7 +45,7 @@ const login = async (req, res) => {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
         secure: true,
-        sameSite:'None',
+        sameSite: "None",
       })
       .json({
         message: `Welcome ${user.username}`,
@@ -75,25 +75,37 @@ const signup = async (req, res) => {
     const newUser = new User({
       username,
       email,
-      password:hashedPassword,
+      password: hashedPassword,
       role,
     });
     await getDb().collection("userlist").insertOne(newUser);
-    return res.status(200).json({message:"User registered successfully",success:true})
+    return res
+      .status(200)
+      .json({ message: "User registered successfully", success: true });
   } catch (error) {
     console.log(error);
-    return res.status(400).json({message:"Error in registering user",success:false})
+    return res
+      .status(400)
+      .json({ message: "Error in registering user", success: false });
   }
 };
 
-const logout=(req,res)=>{
-    try {
-        res.clearCookie('token', { httpOnly: true, secure: true, sameSite:'None'}); 
-        return res.status(200).json({message:"Logged out successfully",success:true})
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json({message:"Error in logging out",success:false})
-    }
-}
+const logout = (req, res) => {
+  try {
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+    });
+    return res
+      .status(200)
+      .json({ message: "Logged out successfully", success: true });
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ message: "Error in logging out", success: false });
+  }
+};
 
 export { login, signup, logout };
